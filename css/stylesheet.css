@@ -1,0 +1,441 @@
+@charset "utf-8";
+body {
+  font-family: 'Courier New';
+}
+video {
+  position: fixed;
+  z-index: -9999;
+  opacity: 0.5;
+  min-width: 100%;
+  min-height: 100%;
+}
+#wrap {
+  margin: 0 auto;
+}
+.hambutton {
+  position: fixed;
+  display: flex;
+  transition: 0.1s ease-in-out;
+  width: 45px;
+  height: 34px;
+  top: 30px;
+  left: 30px;
+  z-index: 9999;
+}
+.hambutton span {
+  position: absolute;
+  height: 6px;
+  border-radius: 4px;
+  width: 100%;
+  background-color: #888;
+  top: 0;
+  transition: 0.2s;
+}
+.hambutton span:nth-child(1) {
+  top: 0;
+}
+.hambutton span:nth-child(2),
+.hambutton span:nth-child(3) {
+  top: 13px;
+}
+.hambutton span:nth-child(4) {
+  top: 26px;
+}
+.hambutton.active span:nth-child(1),
+.hambutton.active span:nth-child(4) {
+  opacity: 0;
+}
+.hambutton.active span:nth-child(2) {
+  transform: rotate(45deg);
+}
+.hambutton.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+/* 햄버거 버튼 */
+#sideNav {
+  position: fixed;
+  background-color: #313035;
+  width: 300px;
+  height: 100%;
+  left: -300px;
+  transition: all 0.4s;
+  z-index: 999;
+}
+#sideNav.on {
+  opacity: 0.8;
+  left: 0px;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.8);
+}
+#sideNav > li {
+  position: relative;
+  top: 40%;
+  text-align: center;
+  padding: 5px;
+  transition: all 0.4s;
+}
+#sideNav li:hover {
+  transform: scale(1.1);
+}
+#sideNav > li a {
+  color: #888;
+  font-size: 30px;
+}
+#sideNav ul {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+#sideNav ul li {
+  transition: all 0.4s;
+  display: none;
+}
+/* 사이드네비 */
+.navBox {
+  position: fixed;
+  min-width: 100%;
+  background-color: #313035;
+  height: 100px;
+  z-index: 999;
+}
+#mainNav {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  transition: all 0.4s;
+}
+#mainNav a {
+  color: #888;
+  font-size: 24px;
+  width: 100px;
+  height: 24px;
+}
+#mainNav li {
+  margin: 0 10px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#mainNav li a::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #aaa;
+  position: absolute;
+  top: 30px;
+  left: -100%;
+  transition: all 1s;
+}
+#mainNav li:hover > a::before {
+  left: 0;
+}
+#mainNav ul {
+  background-color: #313035;
+}
+#mainNav ul > li {
+  position: relative;
+  display: none;
+  text-align: center;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+#sns {
+  position: fixed;
+  right: 0;
+  top: 40px;
+  z-index: 9999;
+}
+#sns li {
+  float: left;
+  width: 30px;
+  height: 30px;
+  transform: scale(1.2);
+  transition: all 0.4s;
+  transform-origin: 50%;
+}
+#sns li:hover {
+  transform: scale(1.5);
+}
+#sns li a {
+  display: inline-block;
+}
+#sns li i {
+  color: #888;
+}
+/* 메인네비 header 끝 */
+#pop {
+  position: fixed;
+  width: 450px;
+  height: 520px;
+  box-shadow: 5px 0px 5px #313035;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#popUp {
+  position: absolute;
+  width: 450px;
+  top: 520px;
+  left: 1px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #313035;
+  box-shadow: 5px 0px 5px #313035;
+  cursor: pointer;
+}
+/* popup끝 */
+section {
+  font-family: 'S-CoreDream-3Light';
+  text-align: center;
+}
+#page1 {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+#a1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#Ain1 {
+  min-width: 80%;
+  height: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+#Ain1::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #313035;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transition: all 0.6s;
+}
+#a1:hover #Ain1::before {
+  left: 0;
+}
+#Ain1::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #313035;
+  position: absolute;
+  bottom: 0;
+  right: -100%;
+  transition: all 0.6s;
+}
+#a1:hover #Ain1::after {
+  right: 0;
+}
+#Ain1 b {
+  font-size: 24px;
+}
+#Ain1 P {
+  min-width: 500px;
+}
+#Ain1 span {
+  font-size: 14px;
+}
+/* page1 끝 */
+#page2 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'S-CoreDream-3Light';
+}
+#a2 {
+  min-width: 80%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#draw {
+  display: flex;
+  justify-self: center;
+  width: 20%;
+  height: 50%;
+}
+#draw li img {
+  width: 250px;
+}
+.wrap1 {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+.graph {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.graph li {
+  width: 100%;
+  display: block;
+  background: #fff;
+  border-radius: 40px;
+}
+.graph li strong {
+  display: block;
+  height: 25px;
+  border-radius: 40px;
+  text-align: right;
+  padding-right: 10px;
+  background: #313035;
+  color: #fff;
+  box-sizing: border-box;
+  animation: stack 2s 1;
+}
+@keyframes stack {
+  0% {
+    opacity: 0.5;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* page2 끝 */
+#page3 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#slideWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  align-items: center;
+}
+.Btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Btn span {
+}
+#prevBtn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 99;
+}
+#nextBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 99;
+}
+#slide1 {
+  position: relative;
+  width: 1200px;
+  height: 935px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#slide1 ul li {
+  position: absolute;
+  width: 1200px;
+  margin: 0 auto;
+}
+#slide1 ul li img {
+  width: 100%;
+  height: 800px;
+}
+/* page3 끝 */
+#page4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+#page4 p {
+  border-top: 3px solid #313035;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-top: 20px;
+}
+#a4 {
+  position: relative;
+  top: 100px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+#a4 ul {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+#a4 ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#a4 ul li:nth-of-type(1) {
+  display: block;
+}
+/* page4 끝 */
+#page5 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#a5 {
+  position: relative;
+  width: 815px;
+  height: 637px;
+  background: url(../images/contact.png) no-repeat center center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#a5 p {
+  position: relative;
+  top: 400px;
+  left: -250px;
+}
+#a5 ul {
+  position: relative;
+  top: 100px;
+  left: 400px;
+  text-align: left;
+}
+#a5 ul li {
+  padding: 30px;
+  color: #fff;
+}
+#a5 ul li i {
+  padding: 0 5px;
+}
+/* page5 끝 */

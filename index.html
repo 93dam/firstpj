@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Personality Design Weppage</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      video {
+        position: fixed;
+        min-width: 100%;
+        min-height: 100%;
+        opacity: 0.5;
+        z-index: -9999;
+      }
+      #mainLg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* 메인로고 화면 가운데정렬 */
+      }
+      #mainLg a {
+        width: 272px;
+        height: 351px;
+      }
+      #mainLg img {
+        transition: all 0.4s;
+      }
+      #mainLg a:hover img {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <video src="video/bg1.mp4" autoplay loop muted></video>
+      <div id="mainLg">
+        <a href="main.html"><img src="images/mainlogo.png" /></a>
+      </div>
+    </div>
+  </body>
+</html>
